@@ -26,32 +26,32 @@ function playRound(computerSelection,yourSelection)
     {
         if(computerSelection === "rock")
         {
-            return "draw";
+            return "Draw game! You both chose rock";
         }
 
         else if(computerSelection === "paper")
         {
-            return "lose"
+            return "You lose! paper beat rock";
         }
         else 
         {
-            return "win";
+            return "You win! rock beat scissor";
         }
     }
     else if(yourSelection === "scissor")
     {
         if(computerSelection === "scissor")
         {
-            return "draw";
+            return "Draw game! You both chose scissor";
         }
 
         else if(computerSelection === "rock")
         {
-            return "lose"
+            return "You lose! rock  beat scissor";
         }
         else 
         {
-            return "win";
+            return "You win! scissor beat paper";
         }
     }
     else 
@@ -59,20 +59,20 @@ function playRound(computerSelection,yourSelection)
     
         if(computerSelection === "paper")
         {
-            return "draw";
+            return "Draw game! You both chose paper";
         }
 
         else if(computerSelection === "scissor")
         {
-            return "lose"
+            return "You lose! scissor beat paper";
         }
         else 
         {
-            return "win";
+            return "You win! paper beat rock";
         }
     
     }
 }
-console.log(`Your choice is ${yourSelection}`);
-console.log(`Computer choice is ${computerSelection}`);
+// console.log(`Your choice is ${yourSelection}`);
+// console.log(`Computer choice is ${computerSelection}`);
 console.log(playRound(computerSelection,yourSelection));
