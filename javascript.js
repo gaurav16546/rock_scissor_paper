@@ -1,78 +1,103 @@
-function getComputeChoice (randomNumber)
-{
-    if (randomNumber === 1 || randomNumber === 6 || randomNumber === 9)
-    {
+//function to randomly return computer choice
+function getComputeChoice(randomNumber) {
+    if (randomNumber === 1 || randomNumber === 6 || randomNumber === 9) {
         return "scissor";
     }
-    else if (randomNumber === 2 || randomNumber === 5  || randomNumber === 8)
-    {
+    else if (randomNumber === 2 || randomNumber === 5 || randomNumber === 8) {
         return "paper";
     }
-    else
-    {
-    return "rock";
+    else {
+        return "rock";
     }
 }
 
-randomNumber = Math.floor(Math.random() * 10 );
-const computerSelection = getComputeChoice(randomNumber);
-let yourSelection = prompt("Enter your choice");
-yourSelection = yourSelection.toLowerCase();
+// function bothSelection
+
 // console.log(yourSelection);
 
-function playRound(computerSelection,yourSelection)
-{
-    if(yourSelection === "rock")
-    {
-        if(computerSelection === "rock")
-        {
-            return "Draw game! You both chose rock";
+
+//actually play game 
+function playRound(computerSelection, yourSelection) {
+    if (yourSelection === "rock") {
+        if (computerSelection === "rock") {
+            return "draw";
         }
 
-        else if(computerSelection === "paper")
-        {
-            return "You lose! paper beat rock";
+        else if (computerSelection === "paper") {
+            return "lose";
         }
-        else 
-        {
-            return "You win! rock beat scissor";
+        else {
+            return "win";
         }
     }
-    else if(yourSelection === "scissor")
-    {
-        if(computerSelection === "scissor")
-        {
-            return "Draw game! You both chose scissor";
+    else if (yourSelection === "scissor") {
+        if (computerSelection === "scissor") {
+            return "draw";
         }
 
-        else if(computerSelection === "rock")
-        {
-            return "You lose! rock  beat scissor";
+        else if (computerSelection === "rock") {
+            return "lose";
         }
-        else 
-        {
-            return "You win! scissor beat paper";
+        else {
+            return "win";
         }
     }
-    else 
-    {
-    
-        if(computerSelection === "paper")
-        {
-            return "Draw game! You both chose paper";
+    else {
+
+        if (computerSelection === "paper") {
+            return "draw";
         }
 
-        else if(computerSelection === "scissor")
-        {
-            return "You lose! scissor beat paper";
+        else if (computerSelection === "scissor") {
+            return "lose";
         }
-        else 
-        {
-            return "You win! paper beat rock";
+        else {
+            return "win";
         }
-    
+
     }
 }
 // console.log(`Your choice is ${yourSelection}`);
 // console.log(`Computer choice is ${computerSelection}`);
-console.log(playRound(computerSelection,yourSelection));
+// console.log(playRound(computerSelection, yourSelection));
+
+let win = 0, 
+lose = 0;
+//function to play multiple round
+for (let i = 0; i < 5; i++) {
+
+
+
+    randomNumber = Math.floor(Math.random() * 10);
+    let computerSelection = getComputeChoice(randomNumber);
+    let yourSelection = prompt("Enter your choice");
+    yourSelection = yourSelection.toLowerCase();
+    let roundResult = playRound(computerSelection, yourSelection);
+    
+
+
+    if (roundResult === "draw") {
+        console.log(`Game draw! you both chose ${yourSelection}`);
+    }
+    else if (roundResult === "win") {
+        console.log(`You win! ${yourSelection} beats ${computerSelection}`);
+        win+=1;
+    }
+    else {
+        lose+=1;
+        console.log(`You lose! ${computerSelection} beats ${yourSelection}`);
+    }
+}
+
+overallResult(win,lose);
+
+function overallResult(win,lose){
+    if(win > lose)
+    {
+        console.log("You win the game.");
+    }
+    else if(lose > win )
+    console.log("You lose the game.");
+    else 
+    console.log("Game draw.");
+}
