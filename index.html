@@ -5,32 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock scissor paper</title>
-    <style>
-
-        #result{
-            border: 2px solid black;
-            width: 500px;
-            height: 500px;
-            display: flex;
-            justify-content: center;
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+    <h1 class="title">Rock Paper Scissors</h1>
+    <div class="score">
+        <p class="p-count count">Your score:</p>
+        <p class="c-count count">Computer score:</p>
+    </div>
+    <h3 style="text-align:center;">Choose your move</h3>
     <div class="container">
     <button id="rock">Rock</button>
     <button id="scissor">Scissor</button>
     <button id="paper">Paper</button>
-
     </div>
     
-
-    <div id="result"></div>
-
+    <button class="restart">Restart</button>
+    <div class="result"></div>
+    <div class="overall-result"></div>
     <script src="javascript.js"></script>
 </body>
 </html>
