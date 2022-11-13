@@ -89,11 +89,13 @@ const game = () => {
 
 
         if (yourScore === 5) {
-            overall.textContent = "You won."
+            overall.textContent = "Congratulation! You won."
         }
         else {
             overall.textContent = "You lost. Better luck next time!";
         }
+
+        restartBtn.style.display = 'flex';
         restartBtn.addEventListener('click', () =>{
             window.location.reload();
         })
