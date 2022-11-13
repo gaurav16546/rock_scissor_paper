@@ -9,8 +9,7 @@ const game = () => {
         const scissorbtn = document.getElementById('scissor');
         const yourchoice = [rockbtn, scissorbtn, paperbtn];
         const computerchoice = ['rock', 'scissor', 'paper'];
-
-
+        
         yourchoice.forEach(option => {
             option.addEventListener('click', function () {
                 const randomNumber = Math.floor(Math.random() * 3);
@@ -30,6 +29,8 @@ const game = () => {
     function roundResult(computerSelection, yourSelection) {
         yourSelection = yourSelection.toLowerCase();
         const div = document.querySelector('.result');
+        const playerScore = document.querySelector('.p-count');
+        const aiScore = document.querySelector('.c-count');
 
 
         if (yourSelection === "rock") {
@@ -40,10 +41,12 @@ const game = () => {
             else if (computerSelection === "paper") {
                 div.textContent = "lose";
                 computerScore++;
+                aiScore.textContent ="Computer score:" + computerScore;
             }
             else {
                 div.textContent = "win";
                 yourScore++;
+                playerScore.textContent ="Your score:" + yourScore;
             }
         }
         else if (yourSelection === "scissor") {
@@ -54,11 +57,13 @@ const game = () => {
             else if (computerSelection === "rock") {
                 div.textContent = "lose";
                 computerScore++;
+                aiScore.textContent ="Computer score:" + computerScore;
             }
 
             else {
                 div.textContent = "win";
                 yourScore++;
+                playerScore.textContent ="Your score:" + yourScore;
             }
         }
         else {
@@ -70,10 +75,12 @@ const game = () => {
             else if (computerSelection === "scissor") {
                 div.textContent = "lose";
                 computerScore++;
+                aiScore.textContent ="Computer score:" + computerScore;
             }
             else {
                 div.textContent = "win";
                 yourScore++;
+                playerScore.textContent ="Your score:" + yourScore;
             }
 
         }
