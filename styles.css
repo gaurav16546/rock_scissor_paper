@@ -1,0 +1,39 @@
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  margin: 20px;
+  background-color: yellow;
+  color: rgb(28, 109, 223);
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.score {
+  display: flex;
+  justify-content: center;
+  gap: 110px;
+}
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.restart {
+  display: none;
+  margin:auto;
+}
+button{
+    color: ;
+}
