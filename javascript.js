@@ -39,12 +39,12 @@ const game = () => {
             }
 
             else if (computerSelection === "paper") {
-                div.textContent = "lose";
+                div.textContent = "Lose";
                 computerScore++;
                 aiScore.textContent ="Computer score:" + computerScore;
             }
             else {
-                div.textContent = "win";
+                div.textContent = "Win";
                 yourScore++;
                 playerScore.textContent ="Your score:" + yourScore;
             }
@@ -55,13 +55,13 @@ const game = () => {
             }
 
             else if (computerSelection === "rock") {
-                div.textContent = "lose";
+                div.textContent = "Lose";
                 computerScore++;
                 aiScore.textContent ="Computer score:" + computerScore;
             }
 
             else {
-                div.textContent = "win";
+                div.textContent = "Win";
                 yourScore++;
                 playerScore.textContent ="Your score:" + yourScore;
             }
@@ -73,12 +73,12 @@ const game = () => {
             }
 
             else if (computerSelection === "scissor") {
-                div.textContent = "lose";
+                div.textContent = "Lose";
                 computerScore++;
                 aiScore.textContent ="Computer score:" + computerScore;
             }
             else {
-                div.textContent = "win";
+                div.textContent = "Win";
                 yourScore++;
                 playerScore.textContent ="Your score:" + yourScore;
             }
@@ -86,10 +86,11 @@ const game = () => {
         }
     }
 
-    const gameOver = (yourchoice,) => {
+    const gameOver = (yourchoice) => {
        
-       const restartBtn = document.querySelector('.restart');
+        const restartBtn = document.querySelector('.restart');
         const overall = document.querySelector('.overall-result');
+        const result = document.querySelector('.result');
         yourchoice.forEach(option => {
             option.style.display = 'none';
         });
@@ -97,12 +98,16 @@ const game = () => {
 
         if (yourScore === 5) {
             overall.textContent = "Congratulation! You won."
+            document.body.style.backgroundColor = "green";
         }
         else {
             overall.textContent = "You lost. Better luck next time!";
+            document.body.style.backgroundColor = "red";
         }
 
+        result.style.display = 'none';
         restartBtn.style.display = 'flex';
+        restartBtn.style.justifyContent = 'center';
         restartBtn.addEventListener('click', () =>{
             window.location.reload();
         })
